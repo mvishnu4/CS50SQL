@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red25\green28\blue31;\red246\green246\blue246;}
+{\*\expandedcolortbl;;\cssrgb\c12941\c14510\c16078;\cssrgb\c97255\c97255\c97255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 $ cd sentimental-connect\
+sentimental-connect/ $ docker container run --name mysql -p 3306:3306 -v /workspaces/$RepositoryName:/mnt -e MYSQL_ROOT_PASSWORD=crimson -d mysql\
+Unable to find image 'mysql:latest' locally\
+latest: Pulling from library/mysql\
+81badc5f380f: Pull complete \
+c490e5dd1a9d: Pull complete \
+87aeb61f1478: Pull complete \
+1cacbea6ceda: Pull complete \
+1e72891ace67: Pull complete \
+42b720363d36: Pull complete \
+6b3b50f9990a: Pull complete \
+3811d52cfa61: Pull complete \
+05bc7a0277d8: Pull complete \
+cc0abd25a274: Pull complete \
+Digest: sha256:ff5ab9cdce0b4c59704b4e2a09deed5ab8467be795e0ea20228b8528f53fcf82\
+Status: Downloaded newer image for mysql:latest\
+4c6865d6ae70c801a7eecef07fb03d6fa5d10470a2dff0d9b3d6a5e34d40645a\
+sentimental-connect/ $ mysql -h 127.0.0.1 -P 3306 -u root -p\
+Enter password: \
+ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 2\
+
+\f1\b\fs22 \ul \'91\'92\'92\'92\cf2 \cb3 \expnd0\expndtw0\kerning0
+\ulc2 docker container start mysql\'92\'92\'92
+\f0\b0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \ulnone \
+sentimental-connect/ $ mysql -h 127.0.0.1 -P 3306 -u root -p\
+Enter password: \
+Welcome to the MySQL monitor.  Commands end with ; or \\g.\
+Your MySQL connection id is 8\
+Server version: 8.3.0 MySQL Community Server - GPL\
+\
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.\
+\
+Oracle is a registered trademark of Oracle Corporation and/or its\
+affiliates. Other names may be trademarks of their respective\
+owners.\
+\
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.\
+\
+mysql> CREATE DATABASE `linkedin`;\
+Query OK, 1 row affected (0.05 sec)\
+\
+mysql> USE `linkedin`;\
+Database changed\
+mysql> }
